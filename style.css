@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    position: relative;
+}
+.flex-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.container section{
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: all .7s;
+}
+.bg-img{
+    background-position: center !important;
+    background-size: cover !important;
+    filter: grayscale(.8);
+}
+.container section:hover{
+    filter: grayscale(0);
+}
+.nairobi{
+    width: 25rem;
+    height: 15rem;
+    background: #ffa600;
+    position: absolute;
+    transform: rotate(34deg);
+    bottom: -7rem;
+    left: -50rem;
+    border: .3rem solid #fff;
+    transition: all .5s;
+}
+.container section:hover .nairobi{
+    left: -7rem;
+}
+.tokyo{
+    width: 20rem;
+    height: 20rem;
+    box-shadow: 0 0 10px rgba(214, 14, 14, 0.8);
+    background: #008cff;
+    border: .3rem solid #fff;
+    position: absolute;
+    right: -30rem;
+    transform: rotate(35deg);
+    transition: all .5s;
+    clip-path: polygon(40% 0%, 100% 100%, 0% 100%);
+}
+.container section:hover .tokyo{
+    right: -13rem;
+}
+.texts{
+    position: absolute;
+    bottom: -100px;
+    left: 7px;
+    width: 60%;
+    color: #fff;
+    transition: all 1s;
+}
+.container section:hover .texts{
+    bottom: 10px;
+}
+.texts p{
+    margin: 10px 0 15px -70px;
+    font-size: 25px;
+    transition: all 1s;
+}
+.container section:hover .texts p{
+    margin: 10px 0 15px 45px;
+}
+.texts div i{
+    font-size: 17px;
+    margin: 0 7px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 1s;
+}
+.texts div i:hover{
+    color: var(--clr);
+    text-shadow: 0 0 2px var(--clr);
+}
+.link{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    /* width: 120px; */
+    height: 40px;
+    background: #444;
+    border-radius: 50%;
+    color: #fff;
+    justify-content: space-around;
+    transition: all .9s;
+}
+.link::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--clr);
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+.link:hover::before{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--clr);
+}
+.link:hover{
+    color: var(--clr);
+    box-shadow: 0 0 5px var(--clr);
+    text-shadow: 0 0 5px var(--clr);
+}
+
+
+/* ================ responsiveness ================= */
+@media screen and (max-width:500px) {
+    .container section{
+        width: 140px;
+        height: 200px;
+        border-radius: 5px;
+    }
+    .nairobi{
+        width: 15rem;
+        height: 6rem;
+        left: -10.9rem !important;
+        bottom: -5.7rem;
+        border: .15rem solid #fff;
+    }
+    .container section:hover .nairobi{
+        left: -3.0rem !important;
+        bottom: -2.7rem;
+    }
+    .tokyo{
+        width: 10rem;
+        height: 10rem;
+        right: -15rem;
+        border: .15rem solid #fff;
+    }
+    .container section:hover .tokyo{
+        right: -7rem;
+    }
+    .texts{
+        width: 90%;
+    }
+    .container section:hover .texts{
+        bottom: 5px;
+    }
+    .texts p{
+        font-size: 15px;
+    }
+    .container section:hover .texts p{
+        margin: 10px 0 7px 10px;
+    }
+    .texts div i{
+        margin: 0 3px;
+        font-size: 12px;
+    }
+}
